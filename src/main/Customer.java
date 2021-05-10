@@ -25,7 +25,7 @@ public class Customer {
         while (enum_rentals.hasMoreElements()) {
             double thisAmount = 0;
             Rental each = (Rental) enum_rentals.nextElement();
-            thisAmount = amountFor(each);
+            thisAmount = each.getCharge();
             frequentRenterPoints ++;
             // add bonus for a two day new release rental
             if ((each.getMovie().getPriceCode() == Movie.NEW_RELEASE) && each.getDaysRented() > 1) 
