@@ -1,6 +1,6 @@
 package main;
 
-public class RegularPriceCategory extends PriceCategory {
+public class RegularPriceCategory implements PriceCategory {
 
     @Override
     public double getPrice(int daysRented) {

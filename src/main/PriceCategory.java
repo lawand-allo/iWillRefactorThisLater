@@ -1,5 +1,5 @@
 package main;
 
-public abstract class PriceCategory {
-    public abstract double getPrice(int daysRented);
+public interface PriceCategory {
+    public double getPrice(int daysRented);
 }
