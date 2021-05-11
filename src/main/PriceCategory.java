@@ -1,5 +1,5 @@
 package main;
 
 public interface PriceCategory {
-    public double getPrice(int daysRented);
+    double getPrice(int daysRented);
 }
