@@ -1,14 +1,14 @@
 package main;
 
-import java.lang.*;
-import java.util.*;
+
+import java.util.Enumeration;
+import java.util.Vector;
 
 public class Customer {
     private final String name;
     private final Vector rentals = new Vector();
-    int frequentRenterPoints = 0;
-    double totalAmount = 0;
-    String statement;
+    private int frequentRenterPoints = 0;
+    private double totalAmount = 0;
 
     public Customer(String newname) {
         name = newname;

@@ -15,10 +15,13 @@ public class Movie {
         switch (newpriceCode) {
             case Movie.CHILDRENS:
                 priceCategory = new ChildrenPriceCategory();
+                break;
             case Movie.NEW_RELEASE:
                 priceCategory = new NewReleasePriceCategory();
+                break;
             case Movie.REGULAR:
                 priceCategory = new RegularPriceCategory();
+                break;
             default:
                 throw new IllegalArgumentException("invalid price code");
         }
