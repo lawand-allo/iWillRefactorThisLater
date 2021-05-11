@@ -4,14 +4,28 @@ public class Movie {
     public static final int CHILDRENS = 2;
     public static final int REGULAR = 0;
     public static final int NEW_RELEASE = 1;
-    private String title;
-    private int priceCode;
+    private final String title;
+    private PriceCategory priceCategory;
     public Movie(String newtitle, int newpriceCode) {
         title = newtitle;
-        priceCode = newpriceCode;
+        setPriceCode(newpriceCode);
     }
-    public int getPriceCode() {
-        return priceCode;
+
+    private void setPriceCode(int newpriceCode) {
+        switch (newpriceCode) {
+            case Movie.CHILDRENS:
+                priceCategory = new ChildrenPriceCategory();
+            case Movie.NEW_RELEASE:
+                priceCategory = new NewReleasePriceCategory();
+            case Movie.REGULAR:
+                priceCategory = new RegularPriceCategory();
+            default:
+                throw new IllegalArgumentException("invalid price code");
+        }
+    }
+
+    public PriceCategory getPriceCategory() {
+        return priceCategory;
     }
     public String getTitle (){
         return title;

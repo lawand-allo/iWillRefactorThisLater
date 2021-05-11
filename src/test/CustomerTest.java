@@ -1,6 +1,4 @@
-import main.Customer;
-import main.Movie;
-import main.Rental;
+import main.*;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -23,7 +21,7 @@ public class CustomerTest {
         Rental rental = mock(Rental.class);
         Movie movie = mock(Movie.class);
         when(movie.getTitle()).thenReturn(movieName);
-        when(movie.getPriceCode()).thenReturn(Movie.REGULAR);
+        when(movie.getPriceCategory()).thenReturn(new RegularPriceCategory());
         when(rental.getMovie()).thenReturn(movie);
         when(rental.getCharge()).thenReturn(amountForMovie);
         when(rental.getDaysRented()).thenReturn(daysRented);
@@ -49,9 +47,9 @@ public class CustomerTest {
         double amountForMovie1 = 2.0;
         double amountForMovie2 = 2.5;
         when(movie1.getTitle()).thenReturn(movieName1);
-        when(movie1.getPriceCode()).thenReturn(Movie.REGULAR);
+        when(movie1.getPriceCategory()).thenReturn(new RegularPriceCategory());
         when(movie2.getTitle()).thenReturn(movieName2);
-        when(movie2.getPriceCode()).thenReturn(Movie.NEW_RELEASE);
+        when(movie2.getPriceCategory()).thenReturn(new NewReleasePriceCategory());
         when(rental1.getMovie()).thenReturn(movie1);
         when(rental2.getMovie()).thenReturn(movie2);
         when(rental1.getCharge()).thenReturn(amountForMovie1);
