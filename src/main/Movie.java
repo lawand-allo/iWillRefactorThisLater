@@ -1,30 +1,15 @@
 package main;
 
 public class Movie {
-    public static final int CHILDRENS = 2;
-    public static final int REGULAR = 0;
-    public static final int NEW_RELEASE = 1;
     private final String title;
     private PriceCategory priceCategory;
-    public Movie(String newtitle, int newpriceCode) {
+    public Movie(String newtitle, PriceCategory priceCategory) {
         title = newtitle;
-        setPriceCode(newpriceCode);
+        setPriceCode(priceCategory);
     }
 
-    private void setPriceCode(int newpriceCode) {
-        switch (newpriceCode) {
-            case Movie.CHILDRENS:
-                priceCategory = new ChildrenPriceCategory();
-                break;
-            case Movie.NEW_RELEASE:
-                priceCategory = new NewReleasePriceCategory();
-                break;
-            case Movie.REGULAR:
-                priceCategory = new RegularPriceCategory();
-                break;
-            default:
-                throw new IllegalArgumentException("invalid price code");
-        }
+    private void setPriceCode(PriceCategory priceCategory) {
+        this.priceCategory = priceCategory;
     }
 
     public PriceCategory getPriceCategory() {

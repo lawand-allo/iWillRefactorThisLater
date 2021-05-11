@@ -1,10 +1,6 @@
 package main;
 
 public class ChildrenPriceCategory  extends PriceCategory {
-    @Override
-    public int getPriceCode() {
-        return Movie.REGULAR;
-    }
 
     @Override
     public double getPrice(int daysRented) {
